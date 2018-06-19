@@ -1,0 +1,37 @@
+{
+    "name": "guinguette.js",
+    "version": "0.0.1",
+    "description": "The accordion plugin that smells good the french baguette",
+    "main": "dist/guinguette.js",
+    "dependencies": {},
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-preset-env": "^1.7.0",
+        "babelify": "^8.0.0",
+        "browser-sync": "^2.24.4",
+        "browserify": "^14.4.0",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-babel": "^7.0.1",
+        "gulp-clean-css": "^3.9.4",
+        "gulp-uglify": "^3.0.0",
+        "vinyl-source-stream": "^2.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/agence-webup/guinguette.git"
+    },
+    "keywords": [
+        "accordion",
+        "guinguette"
+    ],
+    "author": "Agence Webup",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/agence-webup/guinguette/issues"
+    },
+    "homepage": "https://github.com/agence-webup/guinguette#readme"
+}

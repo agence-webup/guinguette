@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guinguette.js</title>
+    <link rel="stylesheet" href="/guinguette.css">
+    <style> 
+      body {
+        margin: 0;
+        background: #fbf7e9;
+        color: #686868;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+      }
+
+      a { color: #0b6ba8; }
+
+      .txtcenter { text-align: center; }
+      .txtright { text-align: right; }
+      .mb2 { margin-bottom: 20px; }
+
+      .btn,
+      .btn:visited {
+        padding: 8px 15px;
+        border: 1px solid #0b6ba8;
+        border-radius: 3px;
+        background: transparent;
+        color: #0b6ba8;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .demo-container {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 10px 20px;
+        padding-top: 20px;
+        max-width: 900px;
+        border: 1px solid #e0e0e9;
+        background: #fff;
+      }
+
+      .demo-head {
+        margin: 60px;
+        text-align: center;
+        font-family: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+      }
+
+      .demo-head p {
+        margin: 0;
+        font-style: italic;
+        font-size: 1.2em;
+      }
+
+      .demo-title {
+        margin: 0;
+        color: #b5342f;
+        font-weight: normal;
+        font-size: 60px;
+      }
+
+      .demo-fairylights {
+        margin-bottom: 50px;
+        width: 100%;
+        border-style: solid;
+        border-image-source: url("img/fairy-lights.png");
+        border-image-slice: 50% 0;
+        border-image-repeat: round;
+        animation: flash 2s step-start infinite;
+      }
+
+      @keyframes flash {
+        0% {
+          border-width: 100px 0 0;
+        } 50% {
+          border-width: 0 0 100px;
+        } 100% {
+          border-width: 100px 0 0;
+        }
+      }
+
+    </style>
+</head>
+<body>
+    <div class="demo-fairylights"></div>
+
+    <div class="demo-head">
+        <h1 class="demo-title txtcenter"><img src="img/logo.svg" alt="Guinguette.js" title="Guinguette.js"></h1>
+        <p class="txtcenter">The accordion plugin that smells good the french baguette</p>
+    </div>
+
+    <div class="demo-container" data-guinguette="container">
+        <div class="txtright mb2">
+            <button class="btn" data-expand>Expand all</button>
+            <button class="btn" data-collapse>Collapse all</button>
+        </div>
+        <h2 data-guinguette-title id="about">About Guinguette.JS</h2>
+        <div data-guinguette-content>
+             <a href="https://github.com/agence-webup/guinguette" target="_blank" relf="noreferer">Guinguette.JS</a> is a lightweight accordion plugin written in ES6 
+            <ul>
+                <li>No dependencies required</li>
+                <li>No extra files to download</li>
+            </ul>
+        </div>
+        <h2 data-guinguette-title>Patturb and Waymo Duel at Key Hearing Over Driverless Car Technology</h2>
+        <div data-guinguette-content>
+             MPs who are leaving the protection of parliament for the campaign trail will render the election significantly more vulnerable
+            to hacking, leading security researchers have warned.
+        </div>
+        <h2 data-guinguette-title>Email Attack Hits Lorr: What to Do if You Clicked</h2>
+        <div data-guinguette-content>
+             Microsoft has spent a lot of time (and money) trying to make Windows self-repairing, partly because it generally gets the
+            blame when other programs – or users – try to improve” it. Given that tens of thousands of expert programmers have worked
+            on the code over the past 30 years, the number of safe, simple, significant and forwards-/backwards-compatible improvements
+            may be quite small. If Windows 10 knew you had a blank or even a black screen of death, it would try to fix it. If it can’t
+            fix it, it should switch to the Windows Recovery Environment, otherwise known as Windows RE or WinRE, which boils down to
+            two options: 1) Start Windows in safe mode using the code on the internal hard drive, then use the troubleshooting routines
+            to fix it. 2) Use code on an external device such as a recovery DVD or USB thumbdrive to start Windows, and then repair or
+            replace the code on the internal hard drive. So, your first aim should be to get to WinRE. From there you can get to safe
+            mode and use the troubleshooting and repair options. If you can’t do that, you will have to – as WinRE puts it – use a device”.
+        </div>
+        <h2 data-guinguette-title>How to Protect Your Privacy as More Apps Harvest Your Data</h2>
+        <div data-guinguette-content>
+             It’s complicated. I’ve spent more than 20 years recommending various anti-virus programs as an essential part of any Windows
+            setup. However, Windows has changed, and the threat landscape has changed. I am no longer sure that a third-party AV program
+            is essential, and some of them may be detrimental. Of course, needs vary. Some people are more accident-prone than others,
+            and some are less sensitive to threats.
+        </div>
+    </div>
+
+    <script src="/guinguette.js"></script>
+    <script>
+        var guinguette = new Guinguette(document.querySelector('[data-guinguette="container"]'))
+
+        document.querySelector('[data-collapse]').addEventListener('click', () => {
+            this.guinguette.collapseAll()
+        })
+        document.querySelector('[data-expand]').addEventListener('click', () => {
+            this.guinguette.expandAll()
+        })
+    </script>
+</body>
+</html>
