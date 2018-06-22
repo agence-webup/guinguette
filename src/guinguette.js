@@ -1,5 +1,5 @@
 class Guinguette {
-  constructor (target) {
+  constructor (target, options) {
     // Selectors
     this.target = target
     this.titles = this.target.querySelectorAll('[data-guinguette-title]')
@@ -11,8 +11,11 @@ class Guinguette {
     this.collapsedClass = 'collapsed'
 
     // Options
-    this.autoCollapse = true
-    this.anchorOpen = true
+    this.defaults = {
+      autoCollapse: false,
+      anchorOpen: true
+    };
+    this.options = this._extendObject({}, this.defaults, options);
 
     // Init
     this.init()
@@ -37,7 +40,7 @@ class Guinguette {
 
     // Open the accordion with anchor link
     [].forEach.call(this.titles, (item, index) => {
-      if (this.anchorOpen && window.location.hash === ('#' + item.id)) {
+      if (this.options.anchorOpen && window.location.hash === ('#' + item.id)) {
         this.expand(index)
       }
     });
@@ -86,6 +89,17 @@ class Guinguette {
     this._isExpanded(this.titles[index]) ? this.collapse(index) : this.expand(index)
   }
 
+  _extendObject() {
+    for (let i = 1; i < arguments.length; i++) {
+      for (let key in arguments[i]) {
+        if (arguments[i].hasOwnProperty(key)) {
+          arguments[0][key] = arguments[i][key];
+        }
+      }
+    }
+    return arguments[0];
+  }
+
   /**
    * Public methods
    */
@@ -103,7 +117,7 @@ class Guinguette {
 
   expand (indexItem, overrideAutoCollapse) {    
     // If auto-collapse then close others accordions
-    if (this.autoCollapse && !(overrideAutoCollapse)) {
+    if (this.options.autoCollapse && !(overrideAutoCollapse)) {
       [].forEach.call(this.titles, (item, index) => {
         if (index !== indexItem) { this.collapse(index) }
       });

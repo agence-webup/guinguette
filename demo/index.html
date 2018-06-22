@@ -131,7 +131,9 @@
 
     <script src="/guinguette.js"></script>
     <script>
-        var guinguette = new Guinguette(document.querySelector('[data-guinguette="container"]'))
+        var guinguette = new Guinguette(document.querySelector('[data-guinguette="container"]'), {
+          autoCollapse: true
+        })
 
         document.querySelector('[data-collapse]').addEventListener('click', () => {
             this.guinguette.collapseAll()

@@ -6,7 +6,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Guinguette = function () {
-  function Guinguette(target) {
+  function Guinguette(target, options) {
     _classCallCheck(this, Guinguette);
 
     // Selectors
@@ -20,8 +20,11 @@ var Guinguette = function () {
     this.collapsedClass = 'collapsed';
 
     // Options
-    this.autoCollapse = true;
-    this.anchorOpen = true;
+    this.defaults = {
+      autoCollapse: false,
+      anchorOpen: true
+    };
+    this.options = this._extendObject({}, this.defaults, options);
 
     // Init
     this.init();
@@ -50,7 +53,7 @@ var Guinguette = function () {
 
       // Open the accordion with anchor link
       [].forEach.call(this.titles, function (item, index) {
-        if (_this.anchorOpen && window.location.hash === '#' + item.id) {
+        if (_this.options.anchorOpen && window.location.hash === '#' + item.id) {
           _this.expand(index);
         }
       });
@@ -107,6 +110,18 @@ var Guinguette = function () {
     value: function _toggle(index) {
       this._isExpanded(this.titles[index]) ? this.collapse(index) : this.expand(index);
     }
+  }, {
+    key: '_extendObject',
+    value: function _extendObject() {
+      for (var i = 1; i < arguments.length; i++) {
+        for (var key in arguments[i]) {
+          if (arguments[i].hasOwnProperty(key)) {
+            arguments[0][key] = arguments[i][key];
+          }
+        }
+      }
+      return arguments[0];
+    }
 
     /**
      * Public methods
@@ -135,7 +150,7 @@ var Guinguette = function () {
       var _this4 = this;
 
       // If auto-collapse then close others accordions
-      if (this.autoCollapse && !overrideAutoCollapse) {
+      if (this.options.autoCollapse && !overrideAutoCollapse) {
         [].forEach.call(this.titles, function (item, index) {
           if (index !== indexItem) {
             _this4.collapse(index);
