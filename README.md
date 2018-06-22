@@ -1,9 +1,9 @@
-# guinguette.js
+# Guinguette.js
 The accordion plugin that smells good the french baguette
 
 ## Introduction
 
-**guinguette.js** is a lightweight accordion plugin written in ES6
+**Guinguette.js** is a lightweight accordion plugin written in ES6
 
 - No dependencies required
 - No extra files to download
@@ -16,7 +16,7 @@ The accordion plugin that smells good the french baguette
 
 Method      | Procedure
 ----------- | ---------
-NPM         | (coming soon)
+NPM         | `npm i guinguette`
 Download    | [Download zip](https://github.com/agence-webup/guinguette/archive/master.zip)
 
 Then guinguette have some css you will have to add (feel free to custom it for a better integration in your UI):

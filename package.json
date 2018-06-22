@@ -1,6 +1,6 @@
 {
-    "name": "guinguette.js",
-    "version": "0.0.1",
+    "name": "guinguette",
+    "version": "0.1.0",
     "description": "The accordion plugin that smells good the french baguette",
     "main": "dist/guinguette.js",
     "dependencies": {},
