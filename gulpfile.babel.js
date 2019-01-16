@@ -16,16 +16,16 @@ const paths = {
         src: 'src/*.css',
         dest: './dist/',
         watch: 'src/*.css',
-        demo: 'demo/'
+        demo: 'docs/'
     },
     js: {
         src: 'src/guinguette.js',
         dest: './dist/',
         watch: 'src/*.js',
-        demo: 'demo/'
+        demo: 'docs/'
     },
     html: {
-        watch: 'demo/**/*.html'
+        watch: 'docs/**/*.html'
     }
 };
 
@@ -74,7 +74,7 @@ gulp.task('browser-sync', () => {
     browserSync({
         open: false,
         server: {
-            baseDir: "demo",
+            baseDir: "docs",
             index: "index.html",
         }
     });
