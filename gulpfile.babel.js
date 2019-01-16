@@ -84,11 +84,11 @@ gulp.task('bs-reload', () => {
     browserSync.reload();
 });
 
-gulp.task('watch', ['browser-sync'], () => {
+gulp.task('watch', gulp.series('browser-sync', () => {
     gulp.watch(paths.css.watch, ['css']);
     gulp.watch(paths.js.watch, ['js']);
     gulp.watch(paths.html.watch, ['bs-reload']);
-});
+}));
 
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', gulp.series('css', 'js'));
